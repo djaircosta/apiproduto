@@ -1,36 +1,14 @@
 package com.daytech.apiproduto.service;
 
-import com.daytech.apiproduto.entity.Produto;
-import com.daytech.apiproduto.repository.ProdutoRepository;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
-@Service
-@Slf4j
-public class ProdutoService {
-    private final ProdutoRepository produtoRepository;
+import com.daytech.apiproduto.entity.Produto;
 
-    public ProdutoService(ProdutoRepository produtoRepository) {
-        this.produtoRepository = produtoRepository;
-    }
+public interface ProdutoService {
+    List<Produto> buscarTodos();
 
-    public List<Produto> buscarTodos() {
-        return produtoRepository.findAll();
-    }
+    Produto save(Produto produto);
 
-    public Produto salvar(Produto produto) {
-        return produtoRepository.save(produto);
-    }
-
-    public void delete(Long id) {
-        try {
-            produtoRepository.deleteById(id);
-        } catch (Exception e) {
-            log.info(e.getMessage());
-            throw new RuntimeException("Erro ao remover produto");
-        }
-    }
+    void delete(Long id);
 
 }
