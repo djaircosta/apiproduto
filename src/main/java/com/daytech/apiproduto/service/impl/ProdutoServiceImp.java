@@ -37,7 +37,7 @@ public class ProdutoServiceImp implements ProdutoService {
     }
 
     @Override
-    public Produto save(Produto produto) {
+    public Produto salvar(Produto produto) {
         // TODO Auto-generated method stub
         return produtoRepository.save(produto);
     }

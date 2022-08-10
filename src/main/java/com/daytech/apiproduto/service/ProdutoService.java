@@ -7,7 +7,7 @@ import com.daytech.apiproduto.entity.Produto;
 public interface ProdutoService {
     List<Produto> buscarTodos();
 
-    Produto save(Produto produto);
+    Produto salvar(Produto produto);
 
     void delete(Long id);
 
